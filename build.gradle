@@ -22,6 +22,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    //-PbaseUrl=https://github.com -Pbrowser=FIREFOX
-   // systemProperties(System.getProperties())
+    //systemProperties(System.getProperties())
 }
