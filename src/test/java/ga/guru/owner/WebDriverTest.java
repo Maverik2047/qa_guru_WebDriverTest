@@ -1,12 +1,14 @@
 package ga.guru.owner;
 
+
 import ga.guru.owner.config.WebDriverProvider;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.openqa.selenium.WebElement;
 
 public class WebDriverTest {
 
@@ -21,7 +23,11 @@ public class WebDriverTest {
     public void testAmazon() {
 
         String title = driver.getTitle();
-        assertEquals("Amazon.com. Spend less. Smile more.", title);
+        WebElement searchbar = driver.findElement(By.id("twotabsearchtextbox"));
+        searchbar.sendKeys("DragonAge");
+        searchbar.submit();
+        Assertions.assertEquals("Amazon.com. Spend less. Smile more.", title);
+
 
     }
 
