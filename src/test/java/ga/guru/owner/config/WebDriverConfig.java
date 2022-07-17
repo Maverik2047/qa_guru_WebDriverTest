@@ -4,6 +4,9 @@ import org.aeonbits.owner.Config;
 
 import java.net.URL;
 
+@Config.Sources({
+        "classpath:config.properties"
+})
 public interface WebDriverConfig extends Config {
     @Key("baseUrl")
     @DefaultValue("https://www.amazon.com/")
@@ -14,7 +17,6 @@ public interface WebDriverConfig extends Config {
     String getBrowser();
 
     @Key("remoteUrl")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     URL getRemoteUrl();
 
 
